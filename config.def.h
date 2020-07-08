@@ -27,9 +27,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class            instance     title       tags mask     isfloating   monitor */
+	{ "Gimp",           NULL,        NULL,       1 << 7,       0,           -1 },
+	{ "Inkscape",       NULL,        NULL,       1 << 7,       0,           -1 },
+	{ "Keepassx2",      NULL,        NULL,       1 << 8,       0,           -1 },
+	{ "XClipboard",     NULL,        NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -83,7 +85,6 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_Print,                   spawn,          SHCMD("capture_screenshot --selection") },
 	{ MODKEY,                       XK_e,                       spawn,          {.v = editconfs} },
 	{ MODKEY,                       XK_n,                       spawn,          {.v = nmdmenu} },
-	{ MODKEY,                       XK_c,                       spawn,          SHCMD("pgrep xclipboard || xclipboard") },
 	{ MODKEY|ShiftMask,             XK_j,                       pushdown,       {0} },
 	{ MODKEY|ShiftMask,             XK_k,                       pushup,         {0} },
 	{ MODKEY,                       XK_h,                       setmfact,       {.f = -0.05} },
