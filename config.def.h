@@ -61,8 +61,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", selbordercolor, "-nf", normbgcolor, "-sb", normbgcolor, "-sf", selbordercolor, "-p", "Run this", NULL };
 static const char *termcmd[]  = { "st", NULL };
+
+/* Lock screen, quit the window manager, reboot or shutdown */
+static const char *managesessioncmd[] = { "manage_session_dwm", "-nb", normbgcolor, "-nf", selbordercolor, "-sb", selbordercolor, "-sf", normbgcolor, "-fn", dmenufont, NULL };
+
+/* Open config files menu */
+static const char *editconfs[] = { "edit_configs", "-nb", normbgcolor, "-nf", selbordercolor, "-sb", selbordercolor, "-sf", normbgcolor, "-fn", dmenufont, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -71,8 +77,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	// { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = editconfs } },
 	{ MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
 	{ MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -106,7 +112,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ Mod1Mask|ControlMask,         XK_Delete, spawn,          {.v = managesessioncmd} },
 };
 
 /* button definitions */

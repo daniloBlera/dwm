@@ -190,7 +190,7 @@ static long getstate(Window w);
 static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
 static void grabbuttons(Client *c, int focused);
 static void grabkeys(void);
-static void incnmaster(const Arg *arg);
+/* static void incnmaster(const Arg *arg); */
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
 static void loadxrdb(void);
@@ -206,7 +206,7 @@ static Client *prevtiled(Client *c);
 static void propertynotify(XEvent *e);
 static void pushdown(const Arg *arg);
 static void pushup(const Arg *arg);
-static void quit(const Arg *arg);
+/* static void quit(const Arg *arg); */
 static Monitor *recttomon(int x, int y, int w, int h);
 static void resize(Client *c, int x, int y, int w, int h, int interact);
 static void resizeclient(Client *c, int x, int y, int w, int h);
@@ -989,12 +989,12 @@ grabkeys(void)
 	}
 }
 
-void
-incnmaster(const Arg *arg)
-{
-	selmon->nmaster = MAX(selmon->nmaster + arg->i, 0);
-	arrange(selmon);
-}
+/* void */
+/* incnmaster(const Arg *arg) */
+/* { */
+	/* selmon->nmaster = MAX(selmon->nmaster + arg->i, 0); */
+	/* arrange(selmon); */
+/* } */
 
 #ifdef XINERAMA
 static int
@@ -1345,11 +1345,11 @@ pushup(const Arg *arg) {
 	arrange(selmon);
 }
 
-void
-quit(const Arg *arg)
-{
-	running = 0;
-}
+/* void */
+/* quit(const Arg *arg) */
+/* { */
+	/* running = 0; */
+/* } */
 
 Monitor *
 recttomon(int x, int y, int w, int h)
