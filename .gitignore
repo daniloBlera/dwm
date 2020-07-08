@@ -1,0 +1,10 @@
+# Compilation files
+drw.o
+dwm
+dwm.o
+util.o
+config.h
+
+# Patching stuff
+*.c.orig
+*.h.orig
