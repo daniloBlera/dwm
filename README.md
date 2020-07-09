@@ -1,4 +1,6 @@
 # A fork of DWM with my configs
+Version forked: [6.2](https://dl.suckless.org/dwm/dwm-6.2.tar.gz)
+
 The colourscheme was based on the red-black theme of the game RUINER, 
 [Here's how the WM looks][sshot] (spoiler: it is VERY red). BTW I use 
 [dwmblocks][bar] for the status bar.
