@@ -1,12 +1,13 @@
 # A fork of DWM with my configs
 Version forked: [6.2](https://dl.suckless.org/dwm/dwm-6.2.tar.gz)
 
-The colourscheme was based on the red-black theme of the game RUINER, 
-[Here's how the WM looks][sshot] (spoiler: it is VERY red). BTW I use 
-[dwmblocks][bar] for the status bar.
+Some examples of how it looks with different themes: [\[1\]][dwm-ruiner] and
+[\[2\]][dwm-mountains]. BTW I use [dwmblocks][bar] for the status bar.
 
-[sshot]: https://i.imgur.com/4Z1MBfU.png
+[dwm-ruiner]: https://i.imgur.com/mfzM8EK.png
+[dwm-mountains]: https://i.imgur.com/f8PYOh1.png
 [bar]: https://github.com/torrinfail/dwmblocks
+
 
 ## Patches used
 *	dwm-actualfullscreen-20191112-cb3f58a.diff
