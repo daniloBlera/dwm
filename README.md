@@ -1,22 +1,21 @@
 # A fork of DWM with my configs
 Version forked: [6.2](https://dl.suckless.org/dwm/dwm-6.2.tar.gz)
 
-Some examples of how it looks with different themes: [\[1\]][dwm-ruiner] and
-[\[2\]][dwm-mountains]. BTW I use [dwmblocks][bar] for the status bar.
+Examples of how it looks with different themes [here][dwm-album]. BTW I use
+[dwmblocks][bar] for the status bar.
 
-[dwm-ruiner]: https://i.imgur.com/mfzM8EK.png
-[dwm-mountains]: https://i.imgur.com/f8PYOh1.png
+[dwm-album]: https://imgur.com/a/mgMmCY4
 [bar]: https://github.com/torrinfail/dwmblocks
 
 
 ## Patches used
-*	dwm-actualfullscreen-20191112-cb3f58a.diff
-*	dwm-alwayscenter-20200625-f04cac6.diff
-*	dwm-bottomstack-6.1.diff
-*	dwm-centeredmaster-6.1.diff
-*	dwm-noborderfloatingfix-6.2.diff
-*	dwm-push_no_master-6.2.diff
-*	dwm-xrdb-6.2.diff
+*   dwm-actualfullscreen-20191112-cb3f58a.diff
+*   dwm-alwayscenter-20200625-f04cac6.diff
+*   dwm-bottomstack-6.1.diff
+*   dwm-centeredmaster-6.1.diff
+*   dwm-noborderfloatingfix-6.2.diff
+*   dwm-push_no_master-6.2.diff
+*   dwm-xrdb-6.2.diff
 
 Note that some unwanted functions were commented out to avoid compilation
 warnings. These were:
@@ -61,7 +60,7 @@ like this in your .xinitrc:
 
     while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
     do
-    	sleep 1
+        sleep 1
     done &
     exec dwm
 
