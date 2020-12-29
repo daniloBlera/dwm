@@ -69,6 +69,10 @@ static const char *managesessioncmd[] = { "manage_session_dwm", "-nb", normbgcol
 static const char *editconfs[] = { "edit_configs", "-nb", normbgcolor, "-nf", selbordercolor, "-sb", selbordercolor, "-sf", normbgcolor, "-fn", dmenufont, NULL };
 static const char *nmdmenu[] = {"networkmanager_dmenu","-fn", dmenufont, "-nf", selbordercolor, "-nb", normbgcolor, "-sf", normbgcolor, "-sb", selbordercolor, NULL};
 
+/**
+ * The keycodes and names can be found using the `xev` command and the
+ * `keysymdef.h` header file (here, located at /usr/include/X11/keysymdef.h).
+ */
 static Key keys[] = {
     /* modifier                     key                         function        argument */
     { MODKEY,                       XK_Menu,                    spawn,          {.v = dmenucmd } },
@@ -85,6 +89,8 @@ static Key keys[] = {
     { Mod1Mask,                     XK_Print,                   spawn,          SHCMD("capture_screenshot --selection") },
     { MODKEY,                       XK_e,                       spawn,          {.v = editconfs} },
     { MODKEY,                       XK_n,                       spawn,          {.v = nmdmenu} },
+    { MODKEY,                       XK_semicolon,               spawn,          SHCMD("pidof keynav 1> /dev/null || keynav ") },
+    { MODKEY|ShiftMask,             XK_semicolon,               spawn,          SHCMD("pkill keynav") },
     { MODKEY|ShiftMask,             XK_j,                       pushdown,       {0} },
     { MODKEY|ShiftMask,             XK_k,                       pushup,         {0} },
     { MODKEY,                       XK_h,                       setmfact,       {.f = -0.05} },
@@ -103,6 +109,8 @@ static Key keys[] = {
     { MODKEY,                       XK_f,                       togglefullscr,  {0} },
     { MODKEY,                       XK_0,                       view,           {.ui = ~0 } },
     { MODKEY|ShiftMask,             XK_0,                       tag,            {.ui = ~0 } },
+    { MODKEY,                       XK_KP_Insert,               view,           {.ui = ~0 } },  // Keypad
+    { MODKEY|ShiftMask,             XK_KP_Insert,               tag,            {.ui = ~0 } },  // Keypad
     { MODKEY,                       XK_comma,                   focusmon,       {.i = -1 } },
     { MODKEY,                       XK_period,                  focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask,             XK_comma,                   tagmon,         {.i = -1 } },
@@ -117,6 +125,15 @@ static Key keys[] = {
     TAGKEYS(                        XK_7,                       6)
     TAGKEYS(                        XK_8,                       7)
     TAGKEYS(                        XK_9,                       8)
+    TAGKEYS(                        XK_KP_End,                  0)  // Keypad
+    TAGKEYS(                        XK_KP_Down,                 1)  // Keypad
+    TAGKEYS(                        XK_KP_Next,                 2)  // Keypad
+    TAGKEYS(                        XK_KP_Left,                 3)  // Keypad
+    TAGKEYS(                        XK_KP_Begin,                4)  // Keypad
+    TAGKEYS(                        XK_KP_Right,                5)  // Keypad
+    TAGKEYS(                        XK_KP_Home,                 6)  // Keypad
+    TAGKEYS(                        XK_KP_Up,                   7)  // Keypad
+    TAGKEYS(                        XK_KP_Prior,                8)  // Keypad
     { Mod1Mask|ControlMask,         XK_Delete,                  spawn,          {.v = managesessioncmd} },
 };
 
