@@ -9,21 +9,30 @@ Examples of how it looks with different themes [here][dwm-album]. BTW I use
 
 
 ## Patches used
-*   dwm-actualfullscreen-20191112-cb3f58a.diff
-*   dwm-alwayscenter-20200625-f04cac6.diff
-*   dwm-bottomstack-6.1.diff
-*   dwm-centeredmaster-6.1.diff
-*   dwm-noborderfloatingfix-6.2.diff
-*   dwm-push_no_master-6.2.diff
-*   dwm-xrdb-6.2.diff
+*   dwm-[actualfullscreen][actualfullscreen]-20191112-cb3f58a.diff
+*   dwm-[alwayscenter][alwayscenter]-20200625-f04cac6.diff
+*   dwm-[bottomstack][bottomstack]-6.1.diff
+*   dwm-[centeredmaster][centeredmaster]-6.1.diff
+*   dwm-[noborder][noborder]floatingfix-6.2.diff
+*   dwm-[push][push]\_no\_master-6.2.diff
+*   dwm-[rmaster][rmaster]-6.2.diff
+*   dwm-[xrdb][xrdb]-6.2.diff
 
 Note that some unwanted functions were commented out to avoid compilation
 warnings. These were:
-*   quit &mdash; Avoiding quit without confirmation;
+*   quit &mdash; Avoiding closing DWM without confirmation;
 *   enternotify &mdash; Preventing the focus to follow the cursor;
 
 You can find these commented functions on `dwm.c` if you want them back.
 
+[actualfullscreen]: https://dwm.suckless.org/patches/actualfullscreen/
+[alwayscenter]: https://dwm.suckless.org/patches/alwayscenter/
+[bottomstack]: https://dwm.suckless.org/patches/bottomstack/
+[centeredmaster]: https://dwm.suckless.org/patches/centeredmaster/
+[noborder]: https://dwm.suckless.org/patches/noborder/
+[push]: https://dwm.suckless.org/patches/push/
+[rmaster]: https://dwm.suckless.org/patches/rmaster/
+[xrdb]: https://dwm.suckless.org/patches/xrdb/
 
 # dwm - dynamic window manager
 dwm is an extremely fast, small, and dynamic window manager for X.
